@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>  
+  <form method="post">
+    <div>
+      <h3>Stadium</h3>
+      <div>
+        <input type="radio" name="stand" value="stand_n" id="stand_n">
+        <label for="stand_n">North Stand</label>
+        <input type="radio" name="stand" value="stand_s" id="stand_s">
+        <label for="stand_s">South Stand</label>
+        <input type="radio" name="stand" value="stand_e" id="stand_e">
+        <label for="stand_e">East Stand</label>
+        <input type="radio" name="stand" value="stand_w" id="stand_w">
+        <label for="stand_w">West Stand</label>
+      </div>
+      <div>
+        <input type="radio" name="seats" value="add_2000" id="add_2000">
+        <label for="add_2000">Add 2000 seats</label>
+        <input type="radio" name="seats" value="add_4000" id="add_4000">
+        <label for="add_4000">Add 4000 seats</label>
+        <input type="radio" name="seats" value="add_6000" id="add_6000">
+        <label for="add_6000">Add 6000 seats</label>
+        <input type="radio" name="seats" value="add_8000" id="add_8000">
+        <label for="add_8000">Add 8000 seats</label>
+      </div>
+      <div>
+        <input type="radio" name="condition" value="upgrade_condition" id="upgrade_condition">
+        <label for="upgrade_condition">Upgrade condition</label>
+      </div>
+    </div>
+    <hr>
+    <div>
+      <h3>Coach</h3>
+      <input type="radio" name="coaches" value="staff_gkp" id="staff_gkp">
+      <label for="staff_gkp">Goalkeeping Coach</label>
+      <input type="radio" name="coaches" value="staff_dfc" id="staff_dfc">
+      <label for="staff_dfc">Defensive Coach</label>
+      <input type="radio" name="coaches" value="staff_mid" id="staff_mid">
+      <label for="staff_mid">Midfield Coach</label>
+      <input type="radio" name="coaches" value="staff_att" id="staff_att">
+      <label for="staff_att">Attacking Coach</label>
+      <input type="radio" name="coaches" value="staff_fitness" id="staff_fitness">
+      <label for="staff_fitness">Fitness Coach</label>
+      <input type="radio" name="coaches" value="staff_scout" id="staff_scout">
+      <label for="staff_scout">Scout</label>
+    </div>
+    <hr>
+    <div>
+      <h3>Property</h3>
+      <input type="radio" name="property" value="pitch" id="pitch">
+      <label for="pitch">Pitch</label>
+      <input type="radio" name="property" value="hospitality" id="hospitality">
+      <label for="hospitality">Hospitality</label>
+      <input type="radio" name="property" value="facilities" id="facilities">
+      <label for="facilities">Facilities</label>
+    </div>
+    <hr>
+    <input type="submit" value="Submit">
+  </form>
+
+<script>
+  const form = document.querySelector('form');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new FormData(e.target);
+    const values = Object.fromEntries(data.entries());
+
+    console.log(values);
+  });
+</script>
+
+  </body>
+</html>
