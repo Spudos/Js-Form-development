@@ -138,48 +138,47 @@
     <input type="submit" value="Submit">
   </form>
 
-<script>
-  window.addEventListener('load', () => {
-    const formdata = JSON.parse(sessionStorage.getItem('formdata'));
-    if (formdata) {
-      const form = document.querySelector('form');
-      const inputs = form.querySelectorAll('input');
-      inputs.forEach(input => {
-        if (input.type === 'radio') {
-          if (input.value === formdata[input.name]) {
-            input.checked = true;
+  <script>
+    window.addEventListener('load', () => {
+      const formdata = JSON.parse(sessionStorage.getItem('formdata'));
+      if (formdata) {
+        const form = document.querySelector('form');
+        const inputs = form.querySelectorAll('input');
+        inputs.forEach(input => {
+          if (input.type === 'radio') {
+            if (input.value === formdata[input.name]) {
+              input.checked = true;
+            }
+          } else if (input.type === 'text') {
+            input.value = formdata[input.name];
+          } else if (input.type === 'checkbox') {
+            if (formdata[input.name].includes(input.value)) {
+              input.checked = true;
+            }
           }
-        } else if (input.type === 'text') {
-          input.value = formdata[input.name];
-        } else if (input.type === 'checkbox') {
-          if (formdata[input.name].includes(input.value)) {
-            input.checked = true;
-          }
-        }
-      });
-    }
-  });
-
-  const form = document.querySelector('form');
-  form.addEventListener('input', (e) => {
-    e.preventDefault();
-    const data = new FormData(form);
-    const values = Object.fromEntries(data.entries());
-
-    for (const key in values) {
-      let type = document.querySelector(`input[name=${key}]`).type;
-      
-      if (type === 'checkbox') {
-        values[key] = data.getAll(key);
+        });
       }
-    }
-    
-    sessionStorage.setItem('formdata', JSON.stringify(values));
-    console.log(values);
-  });
+    });
+
+    const form = document.querySelector('form');
+    form.addEventListener('input', (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const values = Object.fromEntries(data.entries());
+
+      for (const key in values) {
+        let type = document.querySelector(`input[name=${key}]`).type;
+        
+        if (type === 'checkbox') {
+          values[key] = data.getAll(key);
+        }
+      }
+      
+      sessionStorage.setItem('formdata', JSON.stringify(values));
+      console.log(values);
+    });
 
 
-</script>
-
+  </script>
   </body>
 </html>
