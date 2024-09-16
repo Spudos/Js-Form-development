@@ -14,8 +14,11 @@
     <div>
       <hr>
       <h3>Stadium</h3>
-      <p> A stand must be selected for adding seats or upgrading the condition</p>
+      <p>A stand must be selected for adding seats or upgrading the condition</p>
+      <p>You can add seats and upgrade or just do one</p>
       <div>
+        <input type="radio" name="stand" value="stand_none" id="stand_none" checked>
+        <label for="stand_none">No upgrade</label>
         <input type="radio" name="stand" value="stand_n" id="stand_n">
         <label for="stand_n">North Stand</label>
         <input type="radio" name="stand" value="stand_s" id="stand_s">
@@ -25,17 +28,21 @@
         <input type="radio" name="stand" value="stand_w" id="stand_w">
         <label for="stand_w">West Stand</label>
       </div>
-      <div>
-        <input type="radio" name="seats" value="add_2000" id="add_2000">
-        <label for="add_2000">Add 2000 seats</label>
-        <input type="radio" name="seats" value="add_4000" id="add_4000">
-        <label for="add_4000">Add 4000 seats</label>
-        <input type="radio" name="seats" value="add_6000" id="add_6000">
-        <label for="add_6000">Add 6000 seats</label>
-        <input type="radio" name="seats" value="add_8000" id="add_8000">
-        <label for="add_8000">Add 8000 seats</label>
+      <div data-conditional="input[name=stand],!=,stand_none">
+        <input type="radio" name="seats" value="seats_none" id="seats_none" checked>
+        <label for="seats_none">No seats</label>
+        <input type="radio" name="seats" value="seats_2000" id="seats_2000">
+        <label for="seats_2000">2000 seats</label>
+        <input type="radio" name="seats" value="seats_4000" id="seats_4000">
+        <label for="seats_4000">4000 seats</label>
+        <input type="radio" name="seats" value="seats_6000" id="seats_6000">
+        <label for="seats_6000">6000 seats</label>
+        <input type="radio" name="seats" value="seats_8000" id="seats_8000">
+        <label for="seats_8000">8000 seats</label>
       </div>
-      <div>
+      <div data-conditional="input[name=stand],!=,stand_none">
+        <input type="radio" name="condition" value="upgrade_condition_none" id="upgrade_condition_none" checked>
+        <label for="upgrade_condition_none">No upgrade condition</label>
         <input type="radio" name="condition" value="upgrade_condition" id="upgrade_condition">
         <label for="upgrade_condition">Upgrade condition</label>
       </div>
@@ -178,7 +185,36 @@
       console.log(values);
     });
 
+    document.querySelectorAll('[data-conditional]').forEach(element => {
+      const [selector, operator, value] = element.dataset.conditional.split(',');
+      const inputs = document.querySelectorAll(selector);
 
+      if (inputs.length > 1) {
+        inputs.forEach(input => {
+          input.addEventListener('change', () => {
+            
+            if (operator === '!=') {
+              element.style.display = input.value !== value ? 'block' : 'none';
+            }
+
+            if (operator === '=') {
+              element.style.display = input.value === value ? 'block' : 'none';
+            }
+
+          });
+        });
+      } else {
+        inputs[0].addEventListener('change', () => {
+          if (operator === '!=') {
+            element.style.display = inputs[0].value !== value ? 'block' : 'none';
+          }
+
+          if (operator === '=') {
+            element.style.display = inputs[0].value === value ? 'block' : 'none';
+          }
+        });
+      }
+    });
   </script>
   </body>
 </html>
