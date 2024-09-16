@@ -3,13 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="application.css">
   <title>JS Form</title>
 </head>
 
-<body>  
+<body> 
+  <h1>Turnsheet</h1>
+  <p>All items should be able to be selected or deselected</p> 
   <form method="post">
     <div>
+      <hr>
       <h3>Stadium</h3>
+      <p> A stand must be selected for adding seats or upgrading the condition</p>
       <div>
         <input type="radio" name="stand" value="stand_n" id="stand_n">
         <label for="stand_n">North Stand</label>
@@ -38,6 +43,7 @@
     <hr>
     <div>
       <h3>Coach</h3>
+      <p>Only one can be selected</p>
       <input type="radio" name="coaches" value="staff_gkp" id="staff_gkp">
       <label for="staff_gkp">Goalkeeping Coach</label>
       <input type="radio" name="coaches" value="staff_dfc" id="staff_dfc">
@@ -54,6 +60,7 @@
     <hr>
     <div>
       <h3>Property</h3>
+      <p>Only one can be selected</p>
       <input type="radio" name="property" value="pitch" id="pitch">
       <label for="pitch">Pitch</label>
       <input type="radio" name="property" value="hospitality" id="hospitality">
@@ -63,16 +70,70 @@
     </div>
     <hr>
     <div>
-      <input type="text" name="name" placeholder="Name">
+      <h3>Player Actions</h3>
+      <p>Each player has a card. Only one player in the squad can have blend or fitness selected</p>
+      <p>list can be selected on its own</p>
+      <p>Contract or Bonus can be selected for every player.  If either is selected a value must also be selected</p>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Card 1</h5>
+          <input type="radio" name="player_action_squad_1" value="blend" id="blend_1">
+          <label for="blend_1">Blend</label>
+          <input type="radio" name="player_action_squad_1" value="fitness" id="fitness_1">
+          <label for="fitness_1">Fitness</label>
+          <hr>
+          <input type="radio" name="player_action_1" value="contract" id="contract_1">
+          <label for="contract_1">Contract</label>
+          <input type="radio" name="player_action_1" value="bonus" id="bonus_1">
+          <label for="bonus_1">Bonus</label>
+          <input type="radio" name="player_action_1" value="list" id="list_1">
+          <label for="list_1">list</label>
+          <hr>
+          <input type="radio" name="player_action_amount_1" value="250000" id="250000_1">
+          <label for="250000_1">250k</label>
+          <input type="radio" name="player_action_amount_1" value="500000" id="500000_1">
+          <label for="500000_1">500k</label>
+          <input type="radio" name="player_action_amount_1" value="750000" id="750000_1">
+          <label for="750000_1">750k</label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Card 2</h5>
+          <input type="radio" name="player_action_squad_2" value="blend" id="blend_2">
+          <label for="blend_2">Blend</label>
+          <input type="radio" name="player_action_squad_2" value="fitness" id="fitness_2">
+          <label for="Fitness_2">Fitness</label>
+          <hr>
+          <input type="radio" name="player_action_2" value="contract" id="contract_2">
+          <label for="contract_2">Contract</label>
+          <input type="radio" name="player_action_2" value="bonus" id="bonus_2">
+          <label for="bonus_2">Bonus</label>
+          <input type="radio" name="player_action_2" value="list" id="lis_2">
+          <label for="list_2">list</label>
+          <hr>
+          <input type="radio" name="player_action_amount_2" value="250000" id="250000_2">
+          <label for="250000_2">250k</label>
+          <input type="radio" name="player_action_amount_2" value="500000" id="500000_2">
+          <label for="50000_2">500k</label>
+          <input type="radio" name="player_action_amount_2" value="750000" id="750000_2">
+          <label for="750000_2">750k</label>
+        </div>
+      </div>
     </div>
     <hr>
     <div>
-      <input type="checkbox" name="box" value="box1">
-      <label for="box1">Box 1</label>
-      <input type="checkbox" name="box" value="box2">
-      <label for="box2">Box 2</label>
-      <input type="checkbox" name="box" value="box3">
-      <label for="box3">Box 3</label>
+      <h3>Transfer</h3>
+      <p>A transfer type must be selected and a club and amount must be selected</p>
+      <input type="radio" name="transfer_1_type" value="circuit" id="circuit">
+      <label for="pitch">Circuit</label>
+      <input type="radio" name="transfer_1_type" value="managed" id="managed">
+      <label for="hospitality">Managed</label>
+      <input type="radio" name="transfer_1_type" value="unmanaged" id="unmanaged">
+      <label for="facilities">Unmanaged</label>
+      <input type="text" name="club" placeholder="club">
+      <input type="text" name="amount" placeholder="amount">
+    </div>
     <hr>
     <input type="submit" value="Submit">
   </form>
