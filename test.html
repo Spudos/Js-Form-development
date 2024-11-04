@@ -7,214 +7,350 @@
   <title>JS Form</title>
 </head>
 
-<body> 
-  <h1>Turnsheet</h1>
-  <p>All items should be able to be selected or deselected</p> 
-  <form method="post">
-    <div>
-      <hr>
-      <h3>Stadium</h3>
-      <p>A stand must be selected for adding seats or upgrading the condition</p>
-      <p>You can add seats and upgrade or just do one</p>
+<body>
+  <div class="container">
+    <h1>Turnsheet</h1>
+    <p>All items should be able to be selected or deselected</p> 
+    <form method="post">
       <div>
-        <input type="radio" name="stand" value="stand_none" id="stand_none" checked>
-        <label for="stand_none">No upgrade</label>
-        <input type="radio" name="stand" value="stand_n" id="stand_n">
-        <label for="stand_n">North Stand</label>
-        <input type="radio" name="stand" value="stand_s" id="stand_s">
-        <label for="stand_s">South Stand</label>
-        <input type="radio" name="stand" value="stand_e" id="stand_e">
-        <label for="stand_e">East Stand</label>
-        <input type="radio" name="stand" value="stand_w" id="stand_w">
-        <label for="stand_w">West Stand</label>
-      </div>
-      <div data-conditional="input[name=stand],!=,stand_none">
-        <input type="radio" name="seats" value="seats_none" id="seats_none" checked>
-        <label for="seats_none">No seats</label>
-        <input type="radio" name="seats" value="seats_2000" id="seats_2000">
-        <label for="seats_2000">2000 seats</label>
-        <input type="radio" name="seats" value="seats_4000" id="seats_4000">
-        <label for="seats_4000">4000 seats</label>
-        <input type="radio" name="seats" value="seats_6000" id="seats_6000">
-        <label for="seats_6000">6000 seats</label>
-        <input type="radio" name="seats" value="seats_8000" id="seats_8000">
-        <label for="seats_8000">8000 seats</label>
-      </div>
-      <div data-conditional="input[name=stand],!=,stand_none">
-        <input type="radio" name="condition" value="upgrade_condition_none" id="upgrade_condition_none" checked>
-        <label for="upgrade_condition_none">No upgrade condition</label>
-        <input type="radio" name="condition" value="upgrade_condition" id="upgrade_condition">
-        <label for="upgrade_condition">Upgrade condition</label>
-      </div>
-    </div>
-    <hr>
-    <div>
-      <h3>Coach</h3>
-      <p>Only one can be selected</p>
-      <input type="radio" name="coaches" value="staff_gkp" id="staff_gkp">
-      <label for="staff_gkp">Goalkeeping Coach</label>
-      <input type="radio" name="coaches" value="staff_dfc" id="staff_dfc">
-      <label for="staff_dfc">Defensive Coach</label>
-      <input type="radio" name="coaches" value="staff_mid" id="staff_mid">
-      <label for="staff_mid">Midfield Coach</label>
-      <input type="radio" name="coaches" value="staff_att" id="staff_att">
-      <label for="staff_att">Attacking Coach</label>
-      <input type="radio" name="coaches" value="staff_fitness" id="staff_fitness">
-      <label for="staff_fitness">Fitness Coach</label>
-      <input type="radio" name="coaches" value="staff_scout" id="staff_scout">
-      <label for="staff_scout">Scout</label>
-    </div>
-    <hr>
-    <div>
-      <h3>Property</h3>
-      <p>Only one can be selected</p>
-      <input type="radio" name="property" value="pitch" id="pitch">
-      <label for="pitch">Pitch</label>
-      <input type="radio" name="property" value="hospitality" id="hospitality">
-      <label for="hospitality">Hospitality</label>
-      <input type="radio" name="property" value="facilities" id="facilities">
-      <label for="facilities">Facilities</label>
-    </div>
-    <hr>
-    <div>
-      <h3>Player Actions</h3>
-      <p>Each player has a card. Only one player in the squad can have blend or fitness selected</p>
-      <p>list can be selected on its own</p>
-      <p>Contract or Bonus can be selected for every player.  If either is selected a value must also be selected</p>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Card 1</h5>
-          <input type="radio" name="player_action_squad_1" value="blend" id="blend_1">
-          <label for="blend_1">Blend</label>
-          <input type="radio" name="player_action_squad_1" value="fitness" id="fitness_1">
-          <label for="fitness_1">Fitness</label>
-          <hr>
-          <input type="radio" name="player_action_1" value="contract" id="contract_1">
-          <label for="contract_1">Contract</label>
-          <input type="radio" name="player_action_1" value="bonus" id="bonus_1">
-          <label for="bonus_1">Bonus</label>
-          <input type="radio" name="player_action_1" value="list" id="list_1">
-          <label for="list_1">list</label>
-          <hr>
-          <input type="radio" name="player_action_amount_1" value="250000" id="250000_1">
-          <label for="250000_1">250k</label>
-          <input type="radio" name="player_action_amount_1" value="500000" id="500000_1">
-          <label for="500000_1">500k</label>
-          <input type="radio" name="player_action_amount_1" value="750000" id="750000_1">
-          <label for="750000_1">750k</label>
+        <hr>
+        <h3>Stadium</h3>
+        <p>A stand must be selected for adding seats or upgrading the condition</p>
+        <p>You can add seats and upgrade or just do one</p>
+        <div class="radio-buttons rb-5">
+          <input type="radio" name="stand" value="stand_none" id="stand_none" checked>
+          <label for="stand_none">No upgrade</label>
+          <input type="radio" name="stand" value="stand_n" id="stand_n">
+          <label for="stand_n">North Stand</label>
+          <input type="radio" name="stand" value="stand_s" id="stand_s">
+          <label for="stand_s">South Stand</label>
+          <input type="radio" name="stand" value="stand_e" id="stand_e">
+          <label for="stand_e">East Stand</label>
+          <input type="radio" name="stand" value="stand_w" id="stand_w">
+          <label for="stand_w">West Stand</label>
+        </div>
+        <div class="hidden" data-conditional="input[name=stand],!=,stand_none">
+          <div class="radio-buttons rb-5">
+            <input type="radio" name="seats" value="seats_none" id="seats_none" checked>
+            <label for="seats_none">No seats</label>
+            <input type="radio" name="seats" value="seats_2000" id="seats_2000">
+            <label for="seats_2000">2000 seats</label>
+            <input type="radio" name="seats" value="seats_4000" id="seats_4000">
+            <label for="seats_4000">4000 seats</label>
+            <input type="radio" name="seats" value="seats_6000" id="seats_6000">
+            <label for="seats_6000">6000 seats</label>
+            <input type="radio" name="seats" value="seats_8000" id="seats_8000">
+            <label for="seats_8000">8000 seats</label>
+          </div>
+        </div>
+        <div class="hidden" data-conditional="input[name=stand],!=,stand_none">
+          <div class="radio-buttons rb-2">
+            <input type="radio" name="condition" value="upgrade_condition_none" id="upgrade_condition_none" checked>
+            <label for="upgrade_condition_none">No upgrade condition</label>
+            <input type="radio" name="condition" value="upgrade_condition" id="upgrade_condition">
+            <label for="upgrade_condition">Upgrade condition</label>
+          </div>
         </div>
       </div>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Card 2</h5>
-          <input type="radio" name="player_action_squad_2" value="blend" id="blend_2">
-          <label for="blend_2">Blend</label>
-          <input type="radio" name="player_action_squad_2" value="fitness" id="fitness_2">
-          <label for="Fitness_2">Fitness</label>
-          <hr>
-          <input type="radio" name="player_action_2" value="contract" id="contract_2">
-          <label for="contract_2">Contract</label>
-          <input type="radio" name="player_action_2" value="bonus" id="bonus_2">
-          <label for="bonus_2">Bonus</label>
-          <input type="radio" name="player_action_2" value="list" id="lis_2">
-          <label for="list_2">list</label>
-          <hr>
-          <input type="radio" name="player_action_amount_2" value="250000" id="250000_2">
-          <label for="250000_2">250k</label>
-          <input type="radio" name="player_action_amount_2" value="500000" id="500000_2">
-          <label for="50000_2">500k</label>
-          <input type="radio" name="player_action_amount_2" value="750000" id="750000_2">
-          <label for="750000_2">750k</label>
+      <hr>
+      <div>
+        <h3>Coach</h3>
+        <p>Only one can be selected</p>
+        <div class="radio-buttons">
+          <input type="radio" name="coaches" value="staff_gkp" id="staff_gkp">
+          <label for="staff_gkp">Goalkeeping Coach</label>
+          <input type="radio" name="coaches" value="staff_dfc" id="staff_dfc">
+          <label for="staff_dfc">Defensive Coach</label>
+          <input type="radio" name="coaches" value="staff_mid" id="staff_mid">
+          <label for="staff_mid">Midfield Coach</label>
+          <input type="radio" name="coaches" value="staff_att" id="staff_att">
+          <label for="staff_att">Attacking Coach</label>
+          <input type="radio" name="coaches" value="staff_fitness" id="staff_fitness">
+          <label for="staff_fitness">Fitness Coach</label>
+          <input type="radio" name="coaches" value="staff_scout" id="staff_scout">
+          <label for="staff_scout">Scout</label>
         </div>
       </div>
-    </div>
-    <hr>
-    <div>
-      <h3>Transfer</h3>
-      <p>A transfer type must be selected and a club and amount must be selected</p>
-      <input type="radio" name="transfer_1_type" value="circuit" id="circuit">
-      <label for="pitch">Circuit</label>
-      <input type="radio" name="transfer_1_type" value="managed" id="managed">
-      <label for="hospitality">Managed</label>
-      <input type="radio" name="transfer_1_type" value="unmanaged" id="unmanaged">
-      <label for="facilities">Unmanaged</label>
-      <input type="text" name="club" placeholder="club">
-      <input type="text" name="amount" placeholder="amount">
-    </div>
-    <hr>
-    <input type="submit" value="Submit">
-  </form>
+      <hr>
+      <div>
+        <h3>Property</h3>
+        <p>Only one can be selected</p>
+        <div class="radio-buttons rb-3">
+          <input type="radio" name="property" value="pitch" id="pitch">
+          <label for="pitch">Pitch</label>
+          <input type="radio" name="property" value="hospitality" id="hospitality">
+          <label for="hospitality">Hospitality</label>
+          <input type="radio" name="property" value="facilities" id="facilities">
+          <label for="facilities">Facilities</label>
+        </div>
+      </div>
+      <hr>
+      <div>
+        <h3>Player Actions</h3>
+        <p>Each player has a card. Only one player in the squad can have blend or fitness selected</p>
+        <p>list can be selected on its own</p>
+        <p>Contract or Bonus can be selected for every player.  If either is selected a value must also be selected</p>
+        <div class="card-div">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Player 1</h5>
+              <h6 class="card-subtitle">Attacker</h6>
+              <div class="player-info">
+                <div class="panel-1">
+                  <p><strong>Age: </strong>28</p>
+                  <p><strong>Fitness: </strong>100</p>
+                  <p><strong>Listed?: </strong>no</p>
+                  <p><strong>Contract: </strong>52</p>
+                </div>
+                <div class="panel-2">
+                  <p><strong>Loyalty: </strong>43</p>
+                  <p><strong>TS: </strong>76</p>
+                  <p><strong>Value: </strong>14250000</p>
+                  <p><strong>Performance: </strong>52</p>
+                </div>
+              </div>
+              <hr>
+              <p>Player Actions</p>
+              <div class="radio-buttons rb-2">
+                <input type="radio" name="player_action_squad_1" value="blend" id="blend_1">
+                <label for="blend_1">Blend</label>
+                <input type="radio" name="player_action_squad_1" value="fitness" id="fitness_1">
+                <label for="fitness_1">Fitness</label>
+              </div>
+              <hr>
+              <div class="radio-buttons rb-3">
+                <input type="radio" name="player_action_1" value="contract" id="contract_1">
+                <label for="contract_1">Contract</label>
+                <input type="radio" name="player_action_1" value="bonus" id="bonus_1">
+                <label for="bonus_1">Bonus</label>
+                <input type="radio" name="player_action_1" value="list" id="list_1">
+                <label for="list_1">list</label>
+              </div>
+              <div class="radio-buttons rb-4">
+                <input type="radio" name="player_action_amount_1" value="250000" id="250000_1">
+                <label for="250000_1">250k</label>
+                <input type="radio" name="player_action_amount_1" value="500000" id="500000_1">
+                <label for="500000_1">500k</label>
+                <input type="radio" name="player_action_amount_1" value="750000" id="750000_1">
+                <label for="750000_1">750k</label>
+                <input type="radio" name="player_action_amount_1" value="1000000" id="1000000_1">
+                <label for="1000000_1">£1m</label>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Player 2</h5>
+              <h6 class="card-subtitle">Attacker</h6>
+              <div class="player-info">
+                <div class="panel-1">
+                  <p><strong>Age: </strong>28</p>
+                  <p><strong>Fitness: </strong>100</p>
+                  <p><strong>Listed?: </strong>no</p>
+                  <p><strong>Contract: </strong>52</p>
+                </div>
+                <div class="panel-2">
+                  <p><strong>Loyalty: </strong>43</p>
+                  <p><strong>TS: </strong>76</p>
+                  <p><strong>Value: </strong>14250000</p>
+                  <p><strong>Performance: </strong>52</p>
+                </div>
+              </div>
+              <hr>
+              <p>Player Actions</p>
+              <div class="radio-buttons rb-2">
+                <input type="radio" name="player_action_squad_2" value="blend" id="blend_2">
+                <label for="blend_2">Blend</label>
+                <input type="radio" name="player_action_squad_2" value="fitness" id="fitness_2">
+                <label for="fitness_2">Fitness</label>
+              </div>
+              <hr>
+              <div class="radio-buttons rb-3">
+                <input type="radio" name="player_action_2" value="contract" id="contract_2">
+                <label for="contract_2">Contract</label>
+                <input type="radio" name="player_action_2" value="bonus" id="bonus_2">
+                <label for="bonus_2">Bonus</label>
+                <input type="radio" name="player_action_2" value="list" id="list_2">
+                <label for="list_2">list</label>
+              </div>
+              <div class="radio-buttons rb-4">
+                <input type="radio" name="player_action_amount_2" value="250000" id="250000_2">
+                <label for="250000_2">250k</label>
+                <input type="radio" name="player_action_amount_2" value="500000" id="500000_2">
+                <label for="500000_2">500k</label>
+                <input type="radio" name="player_action_amount_2" value="750000" id="750000_2">
+                <label for="750000_2">750k</label>
+                <input type="radio" name="player_action_amount_2" value="1000000" id="1000000_2">
+                <label for="1000000_2">£1m</label>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Player 3</h5>
+              <h6 class="card-subtitle">Attacker</h6>
+              <div class="player-info">
+                <div class="panel-1">
+                  <p><strong>Age: </strong>28</p>
+                  <p><strong>Fitness: </strong>100</p>
+                  <p><strong>Listed?: </strong>no</p>
+                  <p><strong>Contract: </strong>52</p>
+                </div>
+                <div class="panel-2">
+                  <p><strong>Loyalty: </strong>43</p>
+                  <p><strong>TS: </strong>76</p>
+                  <p><strong>Value: </strong>14250000</p>
+                  <p><strong>Performance: </strong>52</p>
+                </div>
+              </div>
+              <hr>
+              <p>Player Actions</p>
+              <div class="radio-buttons rb-2">
+                <input type="radio" name="player_action_squad_3" value="blend" id="blend_3">
+                <label for="blend_3">Blend</label>
+                <input type="radio" name="player_action_squad_3" value="fitness" id="fitness_3">
+                <label for="fitness_3">Fitness</label>
+              </div>
+              <hr>
+              <div class="radio-buttons rb-3">
+                <input type="radio" name="player_action_3" value="contract" id="contract_3">
+                <label for="contract_3">Contract</label>
+                <input type="radio" name="player_action_3" value="bonus" id="bonus_3">
+                <label for="bonus_3">Bonus</label>
+                <input type="radio" name="player_action_3" value="list" id="list_3">
+                <label for="list_3">list</label>
+              </div>
+              <div class="radio-buttons rb-4">
+                <input type="radio" name="player_action_amount_3" value="250000" id="250000_3">
+                <label for="250000_3">250k</label>
+                <input type="radio" name="player_action_amount_3" value="500000" id="500000_3">
+                <label for="500000_3">500k</label>
+                <input type="radio" name="player_action_amount_3" value="750000" id="750000_3">
+                <label for="750000_3">750k</label>
+                <input type="radio" name="player_action_amount_3" value="1000000" id="1000000_3">
+                <label for="1000000_3">£1m</label>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Player 4</h5>
+              <h6 class="card-subtitle">Attacker</h6>
+              <div class="player-info">
+                <div class="panel-1">
+                  <p><strong>Age: </strong>28</p>
+                  <p><strong>Fitness: </strong>100</p>
+                  <p><strong>Listed?: </strong>no</p>
+                  <p><strong>Contract: </strong>52</p>
+                </div>
+                <div class="panel-2">
+                  <p><strong>Loyalty: </strong>43</p>
+                  <p><strong>TS: </strong>76</p>
+                  <p><strong>Value: </strong>14250000</p>
+                  <p><strong>Performance: </strong>52</p>
+                </div>
+              </div>
+              <hr>
+              <p>Player Actions</p>
+              <div class="radio-buttons rb-2">
+                <input type="radio" name="player_action_squad_4" value="blend" id="blend_4">
+                <label for="blend_4">Blend</label>
+                <input type="radio" name="player_action_squad_4" value="fitness" id="fitness_4">
+                <label for="fitness_4">Fitness</label>
+              </div>
+              <hr>
+              <div class="radio-buttons rb-3">
+                <input type="radio" name="player_action_4" value="contract" id="contract_4">
+                <label for="contract_4">Contract</label>
+                <input type="radio" name="player_action_4" value="bonus" id="bonus_4">
+                <label for="bonus_4">Bonus</label>
+                <input type="radio" name="player_action_4" value="list" id="list_4">
+                <label for="list_4">list</label>
+              </div>
+              <div class="radio-buttons rb-4">
+                <input type="radio" name="player_action_amount_4" value="250000" id="250000_4">
+                <label for="250000_4">250k</label>
+                <input type="radio" name="player_action_amount_4" value="500000" id="500000_4">
+                <label for="500000_4">500k</label>
+                <input type="radio" name="player_action_amount_4" value="750000" id="750000_4">
+                <label for="750000_4">750k</label>
+                <input type="radio" name="player_action_amount_4" value="1000000" id="1000000_4">
+                <label for="1000000_4">£1m</label>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Player 5</h5>
+              <h6 class="card-subtitle">Attacker</h6>
+              <div class="player-info">
+                <div class="panel-1">
+                  <p><strong>Age: </strong>28</p>
+                  <p><strong>Fitness: </strong>100</p>
+                  <p><strong>Listed?: </strong>no</p>
+                  <p><strong>Contract: </strong>52</p>
+                </div>
+                <div class="panel-2">
+                  <p><strong>Loyalty: </strong>43</p>
+                  <p><strong>TS: </strong>76</p>
+                  <p><strong>Value: </strong>14250000</p>
+                  <p><strong>Performance: </strong>52</p>
+                </div>
+              </div>
+              <hr>
+              <p>Player Actions</p>
+              <div class="radio-buttons rb-2">
+                <input type="radio" name="player_action_squad_5" value="blend" id="blend_5">
+                <label for="blend_5">Blend</label>
+                <input type="radio" name="player_action_squad_5" value="fitness" id="fitness_5">
+                <label for="fitness_5">Fitness</label>
+              </div>
+              <hr>
+              <div class="radio-buttons rb-3">
+                <input type="radio" name="player_action_5" value="contract" id="contract_5">
+                <label for="contract_5">Contract</label>
+                <input type="radio" name="player_action_5" value="bonus" id="bonus_5">
+                <label for="bonus_5">Bonus</label>
+                <input type="radio" name="player_action_5" value="list" id="list_5">
+                <label for="list_5">list</label>
+              </div>
+              <div class="radio-buttons rb-4">
+                <input type="radio" name="player_action_amount_5" value="250000" id="250000_5">
+                <label for="250000_5">250k</label>
+                <input type="radio" name="player_action_amount_5" value="500000" id="500000_5">
+                <label for="500000_5">500k</label>
+                <input type="radio" name="player_action_amount_5" value="750000" id="750000_5">
+                <label for="750000_5">750k</label>
+                <input type="radio" name="player_action_amount_5" value="1000000" id="1000000_5">
+                <label for="1000000_5">£1m</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div>
+        <h3>Transfer</h3>
+        <p>A transfer type must be selected and a club and amount must be selected</p>
+        <div class="radio-buttons">
+          <input type="radio" name="transfer_1_type" value="circuit" id="circuit">
+          <label for="circuit">Circuit</label>
+          <input type="radio" name="transfer_1_type" value="managed" id="managed">
+          <label for="managed">Managed</label>
+          <input type="radio" name="transfer_1_type" value="unmanaged" id="unmanaged">
+          <label for="unmanaged">Unmanaged</label>
+        </div>
+        <div>
+          <input class="hidden" type="text" name="transfer_1_player_id" placeholder="player_id">
+          <input class="hidden" type="text" name="transfer_1_club" placeholder="club">
+          <input class="hidden" type="text" name="transfer_1_amount" placeholder="amount">
+        </div>
+      </div>
+      <hr>
+      <input type="submit" value="Submit" class="submit-button">
+    </form>
+  </div>
 
-  <script>
-    window.addEventListener('load', () => {
-      const formdata = JSON.parse(sessionStorage.getItem('formdata'));
-      if (formdata) {
-        const form = document.querySelector('form');
-        const inputs = form.querySelectorAll('input');
-        inputs.forEach(input => {
-          if (input.type === 'radio') {
-            if (input.value === formdata[input.name]) {
-              input.checked = true;
-            }
-          } else if (input.type === 'text') {
-            input.value = formdata[input.name];
-          } else if (input.type === 'checkbox') {
-            if (formdata[input.name].includes(input.value)) {
-              input.checked = true;
-            }
-          }
-        });
-      }
-    });
-
-    const form = document.querySelector('form');
-    form.addEventListener('input', (e) => {
-      e.preventDefault();
-      const data = new FormData(form);
-      const values = Object.fromEntries(data.entries());
-
-      for (const key in values) {
-        let type = document.querySelector(`input[name=${key}]`).type;
-        
-        if (type === 'checkbox') {
-          values[key] = data.getAll(key);
-        }
-      }
-      
-      sessionStorage.setItem('formdata', JSON.stringify(values));
-      console.log(values);
-    });
-
-    document.querySelectorAll('[data-conditional]').forEach(element => {
-      const [selector, operator, value] = element.dataset.conditional.split(',');
-      const inputs = document.querySelectorAll(selector);
-
-      if (inputs.length > 1) {
-        inputs.forEach(input => {
-          input.addEventListener('change', () => {
-            
-            if (operator === '!=') {
-              element.style.display = input.value !== value ? 'block' : 'none';
-            }
-
-            if (operator === '=') {
-              element.style.display = input.value === value ? 'block' : 'none';
-            }
-
-          });
-        });
-      } else {
-        inputs[0].addEventListener('change', () => {
-          if (operator === '!=') {
-            element.style.display = inputs[0].value !== value ? 'block' : 'none';
-          }
-
-          if (operator === '=') {
-            element.style.display = inputs[0].value === value ? 'block' : 'none';
-          }
-        });
-      }
-    });
-  </script>
+  <script src="script.js"></script>
   </body>
 </html>

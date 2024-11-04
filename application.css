@@ -1,5 +1,102 @@
+.container {
+  color: #00043b;
+  font-family: 'Roboto', sans-serif;
+  width: 80%;
+  margin: auto;
+  justify-items: center;
+}
+
 .card {
-  border: 1px solid black;
-  margin: 10px;
+  border: 1px solid #00043b;
+  border-radius: 10px;
   padding: 10px;
+}
+
+.card-div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.card-title, .card-subtitle {
+  font-size: 18px;
+  padding: 10px;
+  margin: 0;
+  text-align: center;
+  background-color: #00043b;
+  color: #ffffff;
+}
+
+.player-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.radio-buttons {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 100%;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.rb-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.rb-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.rb-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.rb-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.radio-buttons label {
+  border: 2px solid #00043b;
+  border-radius: 20px;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked + label {
+  background-color: #45a049;
+  color: #ffffff;
+}
+
+.submit-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: #00043b solid 2px;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+.radio-buttons label:hover {
+  background-color: #00043b;
+  color: #ffffff;
 }
