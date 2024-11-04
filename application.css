@@ -68,7 +68,7 @@ input[type="radio"] {
 }
 
 .radio-buttons label {
-  border: 2px solid #00043b;
+  border: 1px solid #00043b;
   border-radius: 20px;
   text-align: center;
   padding: 10px;
@@ -99,4 +99,15 @@ input[type="radio"]:checked + label {
 .radio-buttons label:hover {
   background-color: #00043b;
   color: #ffffff;
+}
+
+.divider {
+  margin-top: 75px;
+}
+
+.submission {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
